@@ -30,8 +30,6 @@ export const CORE_CONCEPTS = [
   },
 ];
 
-
-
 export const EXAMPLES = {
   components: {
     title: 'Components',
