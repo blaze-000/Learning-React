@@ -1,11 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Caprasimo&family=Roboto+Slab:wght@400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&family=Roboto+Slab:wght@400;700&display=swap');
 
 * {
   box-sizing: border-box;
 }
 
 html {
-  font-family: "Roboto Slab", sans-serif;
+  font-family: 'Roboto Slab', sans-serif;
   line-height: 1.5;
 
   color: #ebe7ef;
@@ -23,7 +23,7 @@ body {
       rgba(241, 210, 70, 0.98),
       rgba(250, 176, 103, 0.87)
     ),
-    url("/bg-pattern-dark.png");
+    url('bg-pattern-dark.png');
   background-repeat: repeat;
   background-size: 100% 100%, 30% 30%, 100% 100%;
   min-height: 110rem;
@@ -41,8 +41,8 @@ header img {
 }
 
 h1 {
-  font-family: "Caprasimo", cursive;
-  font-size: clamp(2rem, 5vw, 3rem);
+  font-family: 'Caprasimo', cursive;
+  font-size: 3rem;
   margin: 0 auto 3rem auto;
   color: #3f3b00;
 }
@@ -50,33 +50,28 @@ h1 {
 #game-container {
   max-width: 45rem;
   margin: 3rem auto;
-  padding: clamp(1rem, 4vw, 2rem);
+  padding: 2rem;
   border-radius: 6px;
   background: linear-gradient(#383624, #282617);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   position: relative;
-  width: 95%;
 }
 
 #players {
   list-style: none;
   padding: 0;
-  margin: 1rem;
+  margin: 1rem ;
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
-  gap: clamp(1rem, 4vw, 2rem);
-  flex-wrap: wrap;
+  gap: 2rem;
 }
 
 #players li {
   display: flex;
   align-items: center;
-  width: auto;
-  min-width: 200px;
+  width: 50%;
   border: 2px solid transparent;
-  flex: 1;
-  max-width: 300px;
 }
 
 #players.highlight-player li.active {
@@ -114,8 +109,8 @@ h1 {
 
 .player-name {
   display: inline-block;
-  width: clamp(8rem, 15vw, 10rem);
-  font-size: clamp(0.9rem, 2.5vw, 1rem);
+  width: 10rem;
+  font-size: 1rem;
   color: #e1dec7;
   text-transform: uppercase;
   margin: 0;
@@ -127,8 +122,8 @@ h1 {
 
 .player input {
   font: inherit;
-  font-size: clamp(0.9rem, 2.5vw, 1rem);
-  width: clamp(8rem, 15vw, 10rem);
+  font-size: 1rem;
+  width: 10rem;
   border: none;
   padding: 0.5rem;
   animation: pulse-text 2s infinite;
@@ -158,8 +153,8 @@ ol {
   background: none;
   color: #f8c031;
   border: none;
-  font-family: "Caprasimo", cursive;
-  font-size: clamp(2.5rem, 8vw, 4rem);
+  font-family: 'Caprasimo', cursive;
+  font-size: 4rem;
   text-shadow: 0 0 12px rgba(0, 0, 0, 0.7);
   animation: pulse-text-size 2s infinite ease-out;
 }
@@ -175,86 +170,24 @@ ol {
 }
 
 #game-board ol {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: clamp(0.5rem, 2vw, 1rem);
-  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin: 0;
   padding: 0;
-  width: fit-content;
-  max-width: min(400px, 90vw);
-  background: rgba(0, 0, 0, 0.1);
-  padding: 1rem;
-  border-radius: 12px;
-  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.2);
-}
-
-#game-board ol::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(
-      90deg,
-      transparent 32%,
-      rgba(0, 0, 0, 0.1) 33%,
-      rgba(0, 0, 0, 0.1) 34%,
-      transparent 35%
-    ),
-    linear-gradient(
-      90deg,
-      transparent 65%,
-      rgba(0, 0, 0, 0.1) 66%,
-      rgba(0, 0, 0, 0.1) 67%,
-      transparent 68%
-    ),
-    linear-gradient(
-      0deg,
-      transparent 32%,
-      rgba(0, 0, 0, 0.1) 33%,
-      rgba(0, 0, 0, 0.1) 34%,
-      transparent 35%
-    ),
-    linear-gradient(
-      0deg,
-      transparent 65%,
-      rgba(0, 0, 0, 0.1) 66%,
-      rgba(0, 0, 0, 0.1) 67%,
-      transparent 68%
-    );
-  pointer-events: none;
-  border-radius: 12px;
 }
 
 #game-board button {
-  width: clamp(4rem, 10vw, 6rem);
-  height: clamp(4rem, 10vw, 6rem);
+  width: 8rem;
+  height: 8rem;
   border: none;
   background: #aca788;
   color: #3f3b00;
-  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-size: 5rem;
   cursor: pointer;
-  font-family: "Caprasimo", cursive;
-  padding: 0;
-  border-radius: 8px;
-  transition: all 0.2s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  aspect-ratio: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#game-board button:hover {
-  background: #b8b794;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-}
-
-#game-board button:active {
-  transform: translateY(0);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  font-family: 'Caprasimo', cursive;
+  padding: 1rem;
 }
 
 #game-over {
@@ -272,18 +205,17 @@ ol {
 }
 
 #game-over h2 {
-  font-family: "Caprasimo", cursive;
-  font-size: clamp(2.5rem, 8vw, 4rem);
+  font-family: 'Caprasimo', cursive;
+  font-size: 4rem;
   text-align: center;
   color: #fcd256;
   margin: 0;
 }
 
 #game-over p {
-  font-size: clamp(1.2rem, 4vw, 2rem);
+  font-size: 2rem;
   text-align: center;
   color: #e1dec7;
-  padding: 0 1rem;
 }
 
 #game-over button {
@@ -312,9 +244,8 @@ ol {
   color: #3f3b00;
   list-style: none;
   margin: 2rem auto;
-  padding: 0 1rem;
+  padding: 0;
   text-align: center;
-  width: 95%;
 }
 
 #log li {
@@ -334,7 +265,7 @@ ol {
 }
 
 #game-hints h2 {
-  font-family: "Caprasimo", cursive;
+  font-family: 'Caprasimo', cursive;
   font-size: 2rem;
   margin: 0;
 }
@@ -354,57 +285,15 @@ ol {
   margin-top: 1.5rem;
 }
 
-#undo-wrapper {
+#undo-wrapper{
   display: flex;
   justify-content: center;
-  margin: 2rem 0;
+
 }
 
-#undo {
-  background: linear-gradient(135deg, #ff6b6b, #ee5a24);
-  color: white;
-  border: none;
-  padding: 0.75rem 2rem;
-  font-size: 1rem;
-  font-weight: bold;
-  font-family: "Roboto Slab", sans-serif;
-  border-radius: 25px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  position: relative;
-  overflow: hidden;
-}
-
-#undo::before {
-  content: "↶";
-  margin-right: 0.5rem;
-  font-size: 1.2rem;
-}
-
-#undo:hover {
-  background: linear-gradient(135deg, #ff5252, #d63031);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
-}
-
-#undo:active {
-  transform: translateY(0);
-  box-shadow: 0 2px 10px rgba(255, 107, 107, 0.3);
-}
-
-#undo:disabled {
-  background: #ccc;
-  color: #666;
-  cursor: not-allowed;
-  transform: none;
-  box-shadow: none;
-}
-
-#undo:disabled::before {
-  content: "⚠";
+#undo{
+  background-color: red;
+  padding: 10px;
 }
 
 @keyframes slide-in-from-left {
@@ -469,219 +358,5 @@ ol {
   }
   100% {
     transform: scale(1);
-  }
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  body {
-    min-height: 100vh;
-    padding: 0 0.5rem;
-  }
-
-  header img {
-    width: 6rem;
-    margin: 2rem auto 1rem auto;
-  }
-
-  h1 {
-    font-size: 2rem;
-    margin: 0 auto 2rem auto;
-  }
-
-  #game-container {
-    margin: 1rem auto;
-    padding: 1rem;
-    width: 98%;
-  }
-
-  #players {
-    flex-direction: column;
-    gap: 1rem;
-    margin: 0.5rem;
-  }
-
-  #players li {
-    width: 100%;
-    max-width: none;
-    min-width: auto;
-    justify-content: center;
-  }
-
-  .player-name,
-  .player input {
-    width: 12rem;
-    font-size: 1rem;
-  }
-
-  #pre-game button {
-    font-size: 2.5rem;
-  }
-
-  #game-board ol {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.5rem;
-    max-width: min(300px, 85vw);
-    margin: 0 auto;
-  }
-
-  #game-board button {
-    width: clamp(3.5rem, 8vw, 4.5rem);
-    height: clamp(3.5rem, 8vw, 4.5rem);
-    font-size: clamp(2rem, 5vw, 2.5rem);
-    padding: 0;
-    border-radius: 6px;
-  }
-
-  #game-over h2 {
-    font-size: 2.5rem;
-  }
-
-  #game-over p {
-    font-size: 1.2rem;
-    padding: 0 1rem;
-  }
-
-  #game-over button {
-    font-size: 1.2rem;
-    padding: 0.75rem 1.5rem;
-  }
-
-  #log {
-    max-width: 100%;
-    margin: 1rem auto;
-    padding: 0 0.5rem;
-  }
-
-  #undo {
-    padding: 0.6rem 1.5rem;
-    font-size: 0.9rem;
-  }
-}
-
-@media (max-width: 480px) {
-  h1 {
-    font-size: 1.5rem;
-  }
-
-  #game-container {
-    padding: 0.5rem;
-  }
-
-  #players {
-    margin: 0.25rem;
-  }
-
-  .player-name,
-  .player input {
-    width: 10rem;
-    font-size: 0.9rem;
-  }
-
-  #pre-game button {
-    font-size: 2rem;
-  }
-
-  #game-board ol {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.25rem;
-    max-width: min(250px, 80vw);
-  }
-
-  #game-board button {
-    width: clamp(3rem, 7vw, 3.5rem);
-    height: clamp(3rem, 7vw, 3.5rem);
-    font-size: clamp(1.5rem, 4vw, 2rem);
-    padding: 0;
-    border-radius: 4px;
-  }
-
-  #game-over h2 {
-    font-size: 2rem;
-  }
-
-  #game-over p {
-    font-size: 1rem;
-  }
-
-  #game-over button {
-    font-size: 1rem;
-    padding: 0.5rem 1rem;
-  }
-
-  #undo {
-    padding: 0.5rem 1rem;
-    font-size: 0.8rem;
-  }
-}
-
-@media (min-width: 769px) and (max-width: 1024px) {
-  #game-container {
-    max-width: 600px;
-  }
-
-  #players {
-    justify-content: space-around;
-  }
-
-  #game-board button {
-    width: clamp(5rem, 9vw, 7rem);
-    height: clamp(5rem, 9vw, 7rem);
-    font-size: clamp(3rem, 6vw, 4rem);
-    border-radius: 8px;
-  }
-}
-
-@media (min-width: 1025px) {
-  #game-container {
-    max-width: 45rem;
-  }
-}
-
-/* Landscape orientation adjustments for mobile */
-@media (max-width: 768px) and (orientation: landscape) {
-  body {
-    min-height: auto;
-  }
-
-  header img {
-    width: 4rem;
-    margin: 1rem auto 0.5rem auto;
-  }
-
-  h1 {
-    font-size: 1.5rem;
-    margin: 0 auto 1rem auto;
-  }
-
-  #game-container {
-    margin: 0.5rem auto;
-    padding: 1rem;
-  }
-
-  #players {
-    flex-direction: row;
-    gap: 1rem;
-  }
-
-  #players li {
-    width: auto;
-    flex: 1;
-  }
-
-  #game-board {
-    margin: 1rem 0;
-  }
-
-  #game-board ol {
-    grid-template-columns: repeat(3, 1fr);
-    max-width: min(350px, 90vw);
-  }
-
-  #game-board button {
-    width: clamp(4rem, 9vw, 5rem);
-    height: clamp(4rem, 9vw, 5rem);
-    font-size: clamp(2.5rem, 5vw, 3rem);
-    border-radius: 6px;
   }
 }
