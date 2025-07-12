@@ -160,13 +160,16 @@ ol {
 }
 
 #game-board {
-  display: flex;
+  display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+  grid-template-rows: repeat(3, 1fr);
   flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
-  margin: 3rem 0;
+  width: min(90vw, 400px); 
+  aspect-ratio: 1 / 1; 
+  margin: auto;
   padding: 0;
-  flex-direction: column;
 }
 
 #game-board ol {
@@ -179,8 +182,8 @@ ol {
 }
 
 #game-board button {
-  width: 8rem;
-  height: 8rem;
+  width: clamp(4rem, 20vw, 8rem);
+  height: clamp(4rem, 20vw, 8rem);
   border: none;
   background: #aca788;
   color: #3f3b00;
