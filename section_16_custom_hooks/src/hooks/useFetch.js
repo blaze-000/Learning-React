@@ -1,0 +1,25 @@
+import { useEffect, useState } from "react";
+
+export function useFetch(fetchFunction, initialValue) {
+  const [isFetching, setIsFetching] = useState();
+  const [fetchedData, setFetchedData] = useState(initialValue);
+  const [error, setError] = useState();
+
+  useEffect(() => {
+    async function fetchData() {
+      setIsFetching(true);
+      try {
+        const places = await fetchFunction();
+        setFetchedData(places);
+      } catch (error) {
+        setError({ message: error.message || "Failed to fetch data." });
+      }
+
+      setIsFetching(false);
+    }
+
+    fetchData();
+  }, [fetchFunction]);
+
+  return { isFetching, fetchedData, setFetchedData, error };
+}
