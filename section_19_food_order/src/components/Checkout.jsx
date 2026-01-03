@@ -22,7 +22,7 @@ export default function Checkout() {
 
 
   return (
-    <Modal opoen={userProgressCtx.progress === 'checkout'}>
+    <Modal open={userProgressCtx.progress === 'checkout'}>
       <form action="">
         <h2>Your Checkout</h2>
         <p>Total Amount: {currencyFormatter.format(cartTotal)}</p>
